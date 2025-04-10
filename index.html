@@ -156,7 +156,7 @@
     <!--page 02 lightbox images-->
     <div class="column-container-1" id="02">
       <div class="right" style="background-color: rgb(19, 183, 71)">
-        <img src="photos/lightbox_0.jpg" class="lightbox-main cur" onclick="openModal()"/>
+        <img src="photos/lightbox_0.jpg" class="lightbox-main cursor" onclick="openModal()" />
       </div>
 
       <div class="left" style="background-color: rgb(27, 74, 115);">
@@ -164,21 +164,21 @@
         <div class="lightbox-row">
           <!--column 1 left-->
           <div class="lightbox-column">
-            <img src="photos/lightbox_1.jpg" style="width: 100%" onclick="openModal()"/>
-            <img src="photos/lightbox_5.jpg" style="width: 100%" onclick="openModal()"/>
+            <img src="photos/lightbox_1.jpg" style="width: 100%" onclick="openModal()" class="cursor"/>
+            <img src="photos/lightbox_5.jpg" style="width: 100%" onclick="openModal()" class="cursor"/>
           </div>
           <!--column 2 middle-->
           <div class="lightbox-column">
-            <img src="photos/lightbox_2.jpg" style="width: 100%" onclick="openModal()"/> 
+            <img src="photos/lightbox_2.jpg" style="width: 100%" onclick="openModal()" class="cursor"/> 
             <p>Alexandra</p>
             <p>Le Havre</p>
             <p>2022</p>
           </div>
           <!--column 3 right-->
           <div class="lightbox-column">
-            <img src="photos/lightbox_3.jpg" style="width: 100%" onclick="openModal()"/>
-            <img src="photos/lightbox_4.jpg" style="width: 100%" onclick="openModal()"/>
-            <img src="photos/lightbox_6.jpg" style="width: 100%" onclick="openModal()" />
+            <img src="photos/lightbox_3.jpg" style="width: 100%" onclick="openModal()" class="cursor"/>
+            <img src="photos/lightbox_4.jpg" style="width: 100%" onclick="openModal()" class="cursor"/>
+            <img src="photos/lightbox_6.jpg" style="width: 100%" onclick="openModal()" class="cursor"/>
           </div>
 
           <div id="myModal" class="lightbox-modal">
@@ -271,7 +271,7 @@
   </div>
 
   <!--carousel slideshow container-->
-  <div class="left" style="background-color: #300f72"> 
+  <div class="left" style="background-color: aliceblue"> 
     <div class="carousel">
 
       <div class="carousel-slide carousel-fade">
@@ -286,6 +286,14 @@
         <img src="photos/carousel_3.jpg" class="carousel-img">
       </div>
 
+      <div class="carousel-slide carousel-fade">
+        <img src="photos/carousel_4.jpg" class="carousel-img">
+      </div>
+
+      <div class="carousel-slide carousel-fade">
+        <img src="photos/carousel_5.jpg" class="carousel-img">
+      </div>
+
       <br>
 
       <div class="carousel-move-container">
@@ -296,13 +304,14 @@
     
       <br>
       
-    <!--carousel display dot optional
+    <!--carousel display dot optional-->
       <div style="text-align:center">
         <span class="carousel-dot" onclick="currentSlide(1)"></span> 
         <span class="carousel-dot" onclick="currentSlide(2)"></span> 
         <span class="carousel-dot" onclick="currentSlide(3)"></span> 
+        <span class="carousel-dot" onclick="currentSlide(4)"></span> 
+        <span class="carousel-dot" onclick="currentSlide(5)"></span> 
       </div>
-    -->
       
       <br>
 
@@ -310,12 +319,21 @@
         <div class="carousel-column">
           <img class="carousel-demo carousel-cursor" src="photos/carousel_1.jpg" style="width:100%" onclick="currentSlide(1)" alt="Railway Booth">
         </div>
+
         <div class="carousel-column">
           <img class="carousel-demo carousel-cursor" src="photos/carousel_2.jpg" style="width:100%" onclick="currentSlide(2)" alt="Le Havre Train Station">
         </div>
+
         <div class="carousel-column">
           <img class="carousel-demo carousel-cursor" src="photos/carousel_3.jpg" style="width:100%" onclick="currentSlide(3)" alt="Swiss Railways">
-     
+        </div>
+
+        <div class="carousel-column">
+          <img class="carousel-demo carousel-cursor" src="photos/carousel_4.jpg" style="width:100%" onclick="currentSlide(4)" alt="Highway">
+        </div>
+
+        <div class="carousel-column">
+          <img class="carousel-demo carousel-cursor" src="photos/carousel_5.jpg" style="width:100%" onclick="currentSlide(5)" alt="Le Havre Railway">
         </div>
       </div>
       <!--carousel javascript-->
