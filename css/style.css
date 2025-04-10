@@ -7,11 +7,11 @@ body, html {
 
 /*title page background image*/
 .bg {
-  background-image: url("photos/title_img.jpg");
   height: 100%; 
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
+  max-width: 100%;
 }
 
 /*cursor*/
