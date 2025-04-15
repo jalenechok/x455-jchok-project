@@ -1,0 +1,7 @@
+to do list: 
+1. lightbox gallery
+2. sortable table
+3. embed youtube video
+4. accordion text
+5. write travel diary
+6. mobile view 
