@@ -8,7 +8,8 @@ body, html {
 
 /*title page background image*/
 .bg {
-  background-image: url(/photos/title_img.jpg);
+  background-image: url("../photos/title_img.jpg");
+  display: block;
   height: 100%; 
   background-position: center;
   background-repeat: no-repeat;
