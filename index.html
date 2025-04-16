@@ -5,34 +5,29 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
     <link rel="stylesheet" type="text/css" href="./css/style.css" />
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/5/w3.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
   </head>
   <body>
     <!--navigation bar-->
-    <div>
-      <ul
-        style="
-          list-style: none;
-          text-align: center;
-          position: fixed;
-          margin-top: 0%;
-        "
-        class="navbar"
-      >
-        <li><a href= "#00" >00</a></li>
-        <li><a href= "#01" >01</a></li>
-        <li><a href= "#02" >02</a></li>
-        <li><a href= "#03" >03</a></li>
-        <li><a href= "#04" >04</a></li>
-        <li><a href= "#05" >05</a></li>
-        <li><a href= "#Q" >Q</a></li>
-      </ul>
+    <div class="navbar" style="margin-top: -1%; padding-top: 0%;">
+      
+      <p><a href= "#00" >00</a></p>
+      <p><a href= "#01" >01</a></p>
+      <p><a href= "#02" >02</a></p>
+      <p><a href= "#03" >03</a></p>
+      <p><a href= "#04" >04</a></p>
+      <p><a href= "#05" >05</a></p>
+      <p><a href= "#Q" class="fa fa-search" style="padding-left: 37%;"></a></p>
+
     </div>
 
     <!--copyright bar-->
     <div class="footer" >copyright 2025</div>
 
     <!--page 00 embedded title photo-->
-    <div id = "00" class="bg"> </div>
+    <div id = "00" class="bg" style="background-image: url(photos/title_img.jpg);"> </div>
 
 
 
@@ -150,11 +145,15 @@
       labore et
     </div>
 
-<!--HOW TO OPEN ONE LIGHTBOX IMAGE AT A TIME, FORMAT SO MODAL VIEW IS PRETTIER-->
+<!--fix sizing of modal view images-->
     <!--page 02 lightbox images-->
     <div class="column-container-1" id="02">
       <div class="right" style="background-color: rgb(19, 183, 71)">
-        <img src="photos/lightbox_0.jpg" class="lightbox-main cursor" onclick="openModal()" />
+        <img 
+          src="photos/lightbox_0.jpg" 
+          class="lightbox-main cursor"
+          onclick="document.getElementById('lightbox-modal00').style.display='block'" 
+        />
       </div>
 
       <div class="left" style="background-color: rgb(27, 74, 115);">
@@ -162,294 +161,559 @@
         <div class="lightbox-row">
           <!--column 1 left-->
           <div class="lightbox-column">
-            <img src="photos/lightbox_1.jpg" style="width: 100%" onclick="openModal()" class="cursor"/>
-            <img src="photos/lightbox_5.jpg" style="width: 100%" onclick="openModal()" class="cursor"/>
+            <img 
+              src="photos/lightbox_1.jpg" 
+              style="width: 100%"  
+              class="cursor"
+              onclick="document.getElementById('lightbox-modal01').style.display='block'"
+            />
+
+            <img 
+            src="photos/lightbox_5.jpg" 
+            style="width: 100%"  
+            class="cursor"
+            onclick="document.getElementById('lightbox-modal05').style.display='block'"
+            />
           </div>
           <!--column 2 middle-->
           <div class="lightbox-column">
-            <img src="photos/lightbox_2.jpg" style="width: 100%" onclick="openModal()" class="cursor"/> 
+            <img 
+              src="photos/lightbox_2.jpg" 
+              style="width: 100%" 
+              class="cursor"
+              onclick="document.getElementById('lightbox-modal02').style.display='block'"
+            /> 
             <p>Alexandra</p>
             <p>Le Havre</p>
             <p>2022</p>
           </div>
           <!--column 3 right-->
           <div class="lightbox-column">
-            <img src="photos/lightbox_3.jpg" style="width: 100%" onclick="openModal()" class="cursor"/>
-            <img src="photos/lightbox_4.jpg" style="width: 100%" onclick="openModal()" class="cursor"/>
-            <img src="photos/lightbox_6.jpg" style="width: 100%" onclick="openModal()" class="cursor"/>
+            <img 
+              src="photos/lightbox_3.jpg" 
+              style="width: 100%" 
+              class="cursor"
+              onclick="document.getElementById('lightbox-modal03').style.display='block'"
+            />
+            <img 
+              src="photos/lightbox_4.jpg" 
+              style="width: 100%" 
+              class="cursor"
+              onclick="document.getElementById('lightbox-modal04').style.display='block'"
+            />
+            <img 
+              src="photos/lightbox_6.jpg"
+              style="width: 100%" 
+              class="cursor"
+              onclick="document.getElementById('lightbox-modal06').style.display='block'"
+            />
           </div>
 
-          <div id="myModal" class="lightbox-modal">
-            <span class="lightbox-close cursor" onclick="closeModal()">&times;</span>
-            <div class="lightbox-modal-content">
+          <!-- add the first modal, set id="modal01"-->
+          <div id="lightbox-modal00" class= "lightbox-modal" onclick="this.style.display='none'">
+            <!-- add close button-->
+            <span
+              class="lightbox-close"
+              >&times;</span
+            >
+            <!-- add modal background image -->
+            <div>
+              <img 
+                src="photos/lightbox_0.jpg" 
+                style="width: 100%"
+                class="lightbox-modal-content" 
+              />
+            </div>
+          </div>
           
-              <div class="lightbox-column">
-                <img src="photos/lightbox_0.jpg" style="width:100%">
-              </div>
-          
-              <div class="lightbox-column">
-                <img src="photos/lightbox_1.jpg" style="width:100%">
-              </div>
-          
-              <div class="lightbox-column">
-                <img src="photos/lightbox_2.jpg" style="width:100%">
-              </div>
-              
-              <div class="lightbox-column">
-                <img src="photos/lightbox_3.jpg" style="width:100%">
-              </div>
+          <!--second modal-->
+          <div id="lightbox-modal01" class= "lightbox-modal" onclick="this.style.display='none'">
+            <!-- add close button-->
+            <span
+              class="lightbox-close"
+              >&times;</span
+            >
+            <!-- add modal background image -->
+            <div>
+              <img 
+                src="photos/lightbox_1.jpg" 
+                style="width: 100%"
+                class="lightbox-modal-content" 
+              />
+            </div>
+          </div>
 
-              <div class="lightbox-column">
-                <img src="photos/lightbox_4.jpg" style="width:100%">
+            <!--third modal-->
+            <div id="lightbox-modal02" class= "lightbox-modal" onclick="this.style.display='none'">
+              <!-- add close button-->
+              <span
+                class="lightbox-close"
+                >&times;</span
+              >
+              <!-- add modal background image -->
+              <div>
+                <img 
+                  src="photos/lightbox_2.jpg" 
+                  style="width: 100%"
+                  class="lightbox-modal-content" 
+                />
               </div>
+            </div>
 
-              <div class="lightbox-column">
-                <img src="photos/lightbox_5.jpg" style="width:100%">
+             <!--fourth modal-->
+             <div id="lightbox-modal03" class= "lightbox-modal" onclick="this.style.display='none'">
+              <!-- add close button-->
+              <span
+                class="lightbox-close"
+                >&times;</span
+              >
+              <!-- add modal background image -->
+              <div>
+                <img 
+                  src="photos/lightbox_3.jpg" 
+                  style="width: 100%"
+                  class="lightbox-modal-content" 
+                />
               </div>
+            </div>
 
-              <div class="lightbox-column">
-                <img src="photos/lightbox_6.jpg" style="width:100%">
+             <!--fifth modal-->
+             <div id="lightbox-modal04" class= "lightbox-modal" onclick="this.style.display='none'">
+              <!-- add close button-->
+              <span
+                class="lightbox-close"
+                >&times;</span
+              >
+              <!-- add modal background image -->
+              <div>
+                <img 
+                  src="photos/lightbox_4.jpg" 
+                  style="width: 100%"
+                  class="lightbox-modal-content" 
+                />
               </div>
+            </div>
 
+             <!--sixth modal-->
+             <div id="lightbox-modal05" class= "lightbox-modal" onclick="this.style.display='none'">
+              <!-- add close button-->
+              <span
+                class="lightbox-close"
+                >&times;</span
+              >
+              <!-- add modal background image -->
+              <div>
+                <img 
+                  src="photos/lightbox_5.jpg" 
+                  style="width: 100%"
+                  class="lightbox-modal-content" 
+                />
+              </div>
+            </div>
+
+            <!--seventh modal-->
+            <div id="lightbox-modal06" class= "lightbox-modal" onclick="this.style.display='none'">
+              <!-- add close button-->
+              <span
+                class="lightbox-close"
+                >&times;</span
+              >
+              <!-- add modal background image -->
+              <div>
+                <img 
+                  src="photos/lightbox_6.jpg" 
+                  style="width: 100%"
+                  class="lightbox-modal-content" 
+                />
+              </div>
             </div>
           
+
+        </div>
+      </div>
+    </div>
+
+    <!--Carousel Functional, text scrolling-->
+    <!--page 03 carousel and scrollable text-->
+    <div class="column-container-1" id="03">
+
+      <!--scrollable text-->
+      <div class="right" style="background-color: #bd4d4d" >
+        <div style ="
+          display:flex; 
+          width: 60%; 
+          align-items: center;
+          margin: auto; 
+          overflow: scroll;
+          max-height: 50%;
+          background-color: aliceblue;
+          margin-top: 15%;"
+          >
+          <p>
+            <br> Pink Shell - King Krule <br>
+            <br> Seaforth - King Krule <br>
+            <br>That Is My Life, That Is Yours - King Krule <br>
+            <br> Tortoise Of Independency - King Krule <br>
+            <br>Empty Stomach Space Cadet - King Krule <br>
+            <br> Flimsy - King Krule <br>
+            <br> Hamburgerphobia - King Krule <br>
+            <br>From The Swamp - King Krule <br>
+            <br>Seagirl (Ft. Raveena) - King Krule <br>
+            <br>Our Vacuum - King Krule <br>
+            <br>Space Heavy - King Krule <br>
+            <br>When Vanishing - King Krule <br>
+            <br>If Only It Was Warmth - King Krule <br>
+            <br>Wednesday Overcast - King Krule <br>
+          </p>
+        </div>
+      </div>
+
+      <!--carousel slideshow container-->
+      <div class="left" style="background-color: aliceblue"> 
+        <div class="carousel">
+
+          <div class="carousel-slide carousel-fade">
+            <img src="photos/carousel_1.jpg" class="carousel-img">
+          </div>
+          
+          <div class="carousel-slide carousel-fade">
+            <img src="photos/carousel_2.jpg" class="carousel-img">
+          </div>
+          
+          <div class="carousel-slide carousel-fade">
+            <img src="photos/carousel_3.jpg" class="carousel-img">
+          </div>
+
+          <div class="carousel-slide carousel-fade">
+            <img src="photos/carousel_4.jpg" class="carousel-img">
+          </div>
+
+          <div class="carousel-slide carousel-fade">
+            <img src="photos/carousel_5.jpg" class="carousel-img">
+          </div>
+
+          <br>
+
+          <div class="carousel-move-container">
+            <a class="carousel-move cursor" onclick="plusSlides(-1)" >❮ prev.</a>
+            
+            <a class="carousel-move cursor"onclick="plusSlides(1)" >next ❯</a>
+          </div>
+        
+          <br>
+          
+        <!--carousel display dot optional-->
+          <div style="text-align:center">
+            <span class="carousel-dot" onclick="currentSlide(1)"></span> 
+            <span class="carousel-dot" onclick="currentSlide(2)"></span> 
+            <span class="carousel-dot" onclick="currentSlide(3)"></span> 
+            <span class="carousel-dot" onclick="currentSlide(4)"></span> 
+            <span class="carousel-dot" onclick="currentSlide(5)"></span> 
+          </div>
+          
+          <br>
+
+          <div class="carousel-row">
+            <div class="carousel-column">
+              <img class="carousel-demo carousel-cursor" src="photos/carousel_1.jpg" style="width:100%" onclick="currentSlide(1)" alt="Railway Booth">
+            </div>
+
+            <div class="carousel-column">
+              <img class="carousel-demo carousel-cursor" src="photos/carousel_2.jpg" style="width:100%" onclick="currentSlide(2)" alt="Le Havre Train Station">
+            </div>
+
+            <div class="carousel-column">
+              <img class="carousel-demo carousel-cursor" src="photos/carousel_3.jpg" style="width:100%" onclick="currentSlide(3)" alt="Swiss Railways">
+            </div>
+
+            <div class="carousel-column">
+              <img class="carousel-demo carousel-cursor" src="photos/carousel_4.jpg" style="width:100%" onclick="currentSlide(4)" alt="Highway">
+            </div>
+
+            <div class="carousel-column">
+              <img class="carousel-demo carousel-cursor" src="photos/carousel_5.jpg" style="width:100%" onclick="currentSlide(5)" alt="Le Havre Railway">
+            </div>
+          </div>
+          <!--carousel javascript-->
           <script>
-            // Open the Modal
-            function openModal() {
-              document.getElementById("myModal").style.display = "block";
+          let slideIndex = 1;
+          showSlides(slideIndex);
+          
+          function plusSlides(n) {
+            showSlides(slideIndex += n);
+          }
+          
+          function currentSlide(n) {
+            showSlides(slideIndex = n);
+          }
+          
+          function showSlides(n) {
+            let i;
+            let slides = document.getElementsByClassName("carousel-slide");
+            let dots = document.getElementsByClassName("carousel-dot");
+            if (n > slides.length) {slideIndex = 1}    
+            if (n < 1) {slideIndex = slides.length}
+            for (i = 0; i < slides.length; i++) {
+              slides[i].style.display = "none";  
             }
-            
-            // Close the Modal
-            function closeModal() {
-              document.getElementById("myModal").style.display = "none";
+            for (i = 0; i < dots.length; i++) {
+              dots[i].className = dots[i].className.replace(" carousel-active", "");
             }
-
-            
+            slides[slideIndex-1].style.display = "block";  
+            dots[slideIndex-1].className += " carousel-active";
+          }
           </script>
-        
         </div>
       </div>
     </div>
-  </div>
-</div>
 
-<!--Carousel Functional, text scrolling, FORMAT CAROUSEL THUMBNAILS-->
-<!--page 03 carousel and scrollable text-->
-<div class="column-container-1" id="03">
-
-  <!--scrollable text-->
-  <div class="right" style="background-color: #bd4d4d" >
-    <div style ="
-      display:flex; 
-      width: 60%; 
-      align-items: center;
-      margin: auto; 
-      overflow: scroll;
-      max-height: 50%;
-      background-color: aliceblue;
-      margin-top: 15%;"
-       >
-      <p>
-        <br> Pink Shell - King Krule <br>
-        <br> Seaforth - King Krule <br>
-        <br>That Is My Life, That Is Yours - King Krule <br>
-        <br> Tortoise Of Independency - King Krule <br>
-        <br>Empty Stomach Space Cadet - King Krule <br>
-        <br> Flimsy - King Krule <br>
-        <br> Hamburgerphobia - King Krule <br>
-        <br>From The Swamp - King Krule <br>
-        <br>Seagirl (Ft. Raveena) - King Krule <br>
-        <br>Our Vacuum - King Krule <br>
-        <br>Space Heavy - King Krule <br>
-        <br>When Vanishing - King Krule <br>
-        <br>If Only It Was Warmth - King Krule <br>
-        <br>Wednesday Overcast - King Krule <br>
-      </p>
-    </div>
-  </div>
-
-  <!--carousel slideshow container-->
-  <div class="left" style="background-color: aliceblue"> 
-    <div class="carousel">
-
-      <div class="carousel-slide carousel-fade">
-        <img src="photos/carousel_1.jpg" class="carousel-img">
-      </div>
-      
-      <div class="carousel-slide carousel-fade">
-        <img src="photos/carousel_2.jpg" class="carousel-img">
-      </div>
-      
-      <div class="carousel-slide carousel-fade">
-        <img src="photos/carousel_3.jpg" class="carousel-img">
+    <!--Table inserted, ADD SORT FUNCTION-->
+    <!--page 04 sortable table-->
+    <div class="column-container-1" id="04">
+      <div class="right" style="background-color: #4d9dbd;" >
+          Page 5 right  Column
       </div>
 
-      <div class="carousel-slide carousel-fade">
-        <img src="photos/carousel_4.jpg" class="carousel-img">
-      </div>
+      <div class="left" style="background-color: #0f721c"> 
+        <table style="margin-top: 15%;" id="media-table">
+          <tr>
+              <th class= "cursor" onclick="sortTable(0)">title</th>
+              <th class= "cursor" onclick="sortTable(1)">year</th>
+              <th class= "cursor" onclick="sortTable(2)">author</th>
+              <th class= "cursor" onclick="sortTable(3)">type</th>
+              <th class= "cursor" onclick="sortTable(4)">date</th>
+          </tr>
+          <tr>
+              <td style="font-weight: bold; background-color:black">
+                      <a href="https://www.theguardian.com/books/2024/jan/06/glorious-exploits-by-ferdia-lennon-review-classical-tragedy-as-a-celtic-caper" style="color: aliceblue" target="_blank">Glorious Exploits 
+                      </a>  
+              </td>
+              <td>2024</td>
+              <td>Ferdida Lennon</td>
+              <td>book</td>
+              <td>20250117</td>
+          </tr>
+          <tr>
+              <td style="font-weight: bold; background-color:black">
+                  <a href=https://www.nytimes.com/2024/01/19/books/review/martyr-kaveh-akbar.html style="color: aliceblue" target="_blank">Martyr 
+                  </a>
+              </td>
+              <td>2024</td>
+              <td>Kaveh Akbar</td>
+              <td>book</td>
+              <td>20250219</td>
+          </tr>
+          <tr>
+              <td style="font-weight: bold; background-color: black">
+                  <a href = "https://en.wikipedia.org/wiki/Spider-Man:_Into_the_Spider-Verse" style= "color: aliceblue" target="_blank">Spiderman Into the Spider-Verse
+                  </a>
+              </td>
+              <td>2018</td>
+              <td>Peter Ramsey, Bob Persichetti, Rodney Rothman</td>
+              <td>movie</td>
+              <td>20250217</td>
+          </tr>
+          <tr>
+              <td style="font-weight: bold; background-color:black">
+                  <a href="https://en.wikipedia.org/wiki/Spider-Man:_Into_the_Spider-Verse" style="color: aliceblue" target="_blank">Spiderman Across the Spider-Verse
+                  </a>
+              </td>
+              <td>2023</td>
+              <td>Peter Ramsey, Bob Persichetti, Rodney Rothman</td>
+              <td>movie</td>
+              <td>20250217</td>
+          </tr>
+          <tr>
+              <td style="font-weight: bold; background-color:black">
+                  <a href="https://www.jonathanlack.com/p/review-the-brutalist-is-a-monument" style = "color: aliceblue;" target="_blank">The Brutalist
+                  </a>
+              </td>
+              <td>2024</td>
+              <td>Brady Corbet</td>
+              <td>movie</td>
+              <td>20250212</td>
+          </tr>
+        </table>
 
-      <div class="carousel-slide carousel-fade">
-        <img src="photos/carousel_5.jpg" class="carousel-img">
-      </div>
+        <script>
+          function sortTable(n) {
+      var table, rows, switching, i, x, y, shouldSwitch, dir, switchcount = 0;
 
-      <br>
-
-      <div class="carousel-move-container">
-        <a class="carousel-move cursor" onclick="plusSlides(-1)" >❮ prev.</a>
-        
-        <a class="carousel-move cursor"onclick="plusSlides(1)" >next ❯</a>
-      </div>
+      table = document.getElementById("media-table");
+      switching = true;
+      dir = "asc";
+      while (switching) {
+          switching = false;
+          rows = table.getElementsByTagName("TR");
+          for (i = 1; i < (rows.length - 1); i++) {
+              shouldSwitch = false;
+              x = rows[i].getElementsByTagName("TD")[n];
+          y = rows[i + 1].getElementsByTagName("TD")[n];
+                    var xContent = (isNaN(x.innerHTML))
+        ? (x.innerHTML.toLowerCase() === '-')
+            ? 0 : x.innerHTML.toLowerCase()
+        : parseFloat(x.innerHTML);
+    var yContent = (isNaN(y.innerHTML))
+        ? (y.innerHTML.toLowerCase() === '-')
+            ? 0 : y.innerHTML.toLowerCase()
+        : parseFloat(y.innerHTML);
+          if (dir == "asc") {
+              if (xContent > yContent) {
+                  shouldSwitch= true;
+                  break;
+              }
+          } else if (dir == "desc") {
+              if (xContent < yContent) {
+                  shouldSwitch= true;
+                  break;
+              }
+          }
+      }
+      if (shouldSwitch) {
+          rows[i].parentNode.insertBefore(rows[i + 1], rows[i]);
+          switching = true;
+          switchcount ++;
+      } else {
+          if (switchcount == 0 && dir == "asc") {
+              dir = "desc";
+              switching = true;
+          }
+        }
+      }
+    }
+        </script>
     
-      <br>
-      
-    <!--carousel display dot optional-->
-      <div style="text-align:center">
-        <span class="carousel-dot" onclick="currentSlide(1)"></span> 
-        <span class="carousel-dot" onclick="currentSlide(2)"></span> 
-        <span class="carousel-dot" onclick="currentSlide(3)"></span> 
-        <span class="carousel-dot" onclick="currentSlide(4)"></span> 
-        <span class="carousel-dot" onclick="currentSlide(5)"></span> 
       </div>
-      
-      <br>
+    </div>
 
-      <div class="carousel-row">
-        <div class="carousel-column">
-          <img class="carousel-demo carousel-cursor" src="photos/carousel_1.jpg" style="width:100%" onclick="currentSlide(1)" alt="Railway Booth">
-        </div>
+    <!--NOT STARTED-->
+    <!--page 05 accordion text and youtube videos-->
+    <div class="column-container-1" id="05">
+      <div class="right" style="background-color: #bd4d67" >
+          <div class="accordion-row">
+            <div class="accordion-column">
+              <span style="display: block; padding: 65%;"></span>
+              <div class= "accordionItem">
+                <h3 style="overflow: visible;" class="accordionTitle">click for a surprise </h3>
+                <div class="accordionContent">
+                  <iframe 
+                    width="100%" 
+                    src="https://www.youtube.com/embed/l1heD4T8Yco"
+                    title="" 
+                    frameborder="0" 
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share; autoplay" 
+                    referrerpolicy="strict-origin-when-cross-origin" 
+                    allowfullscreen>
+                  </iframe>
+                  <h4>surprise!</h4>
+                </div>
+              </div>
+            
+            </div>
 
-        <div class="carousel-column">
-          <img class="carousel-demo carousel-cursor" src="photos/carousel_2.jpg" style="width:100%" onclick="currentSlide(2)" alt="Le Havre Train Station">
-        </div>
+            <div class="accordion-column">
+              <span style="display: block; padding: 10%;"></span>
+              <div class= "accordionItem">
+                <h3 style="overflow: visible;" class="accordionTitle">the internet is a treasure trove </h3>
+                <div class="accordionContent">
+                  <iframe 
+                    width="100%" 
+                    src="https://www.youtube.com/embed/6cNW0JCs9Dk"
+                    title="" 
+                    frameborder="0" 
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share; autoplay" 
+                    referrerpolicy="strict-origin-when-cross-origin" 
+                    allowfullscreen>
+                  </iframe>
+                  <h4>you're welcome</h4>
+                </div>
+              </div>
+            </div>
+          </div>
+        
+      </div>
+      <!--end 05 right column-->
 
-        <div class="carousel-column">
-          <img class="carousel-demo carousel-cursor" src="photos/carousel_3.jpg" style="width:100%" onclick="currentSlide(3)" alt="Swiss Railways">
-        </div>
+      <div class="left" style="background-color: #ce2a14"> 
+        <div class="accordion-row">
+          <div class="accordion-column">
+            <div class= "accordionItem">
+              <h3 style="overflow: visible;" class="accordionTitle">hmmmm.... </h3>
+              <div class="accordionContent">
+                <iframe 
+                  width="100%" 
+                  src="https://www.youtube.com/embed/PvB0kWs2IPQ" 
+                  title="" 
+                  frameborder="0" 
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share; autoplay" 
+                  referrerpolicy="strict-origin-when-cross-origin" 
+                  allowfullscreen>
+                </iframe>
+                <h4>bread</h4>
+              </div>
+            </div>
+          
 
-        <div class="carousel-column">
-          <img class="carousel-demo carousel-cursor" src="photos/carousel_4.jpg" style="width:100%" onclick="currentSlide(4)" alt="Highway">
-        </div>
+            <span style="display: block; padding: 25%;"></span>
 
-        <div class="carousel-column">
-          <img class="carousel-demo carousel-cursor" src="photos/carousel_5.jpg" style="width:100%" onclick="currentSlide(5)" alt="Le Havre Railway">
+            <div class= "accordionItem">
+              <h3 style="overflow: visible;" class="accordionTitle">i wonder what's in this one? </h3>
+              <div class="accordionContent">
+                <iframe 
+                  width="100%" 
+                  src="https://www.youtube.com/embed/xdmd_plGHmo?list=PLdf3YOJ5Naq7QEPwEq6uUxJ_2r85zooRw"
+                  title="" 
+                  frameborder="0" 
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share; autoplay" 
+                  referrerpolicy="strict-origin-when-cross-origin" 
+                  allowfullscreen>
+                </iframe>
+                <h4>a nice song!</h4>
+              </div>
+            </div>
+
+            <span style="display: block; padding: 30%;"></span>
+
+            <div class= "accordionItem">
+              <h3 style="overflow: visible;" class="accordionTitle">OPEN AT YOUR OWN RISK </h3>
+              <div class="accordionContent">
+                <iframe 
+                  width="100%" 
+                  src="https://www.youtube.com/embed/7e7rXxBGLjQ" 
+                  title="" 
+                  frameborder="0" 
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share; autoplay" 
+                  referrerpolicy="strict-origin-when-cross-origin" 
+                  allowfullscreen>
+                </iframe>
+                <h4>jazz hedgehog :)</h4>
+              </div>
+            </div>
+
+
+
+          </div>
         </div>
       </div>
-      <!--carousel javascript-->
+      <!--end 05 left column-->
       <script>
-      let slideIndex = 1;
-      showSlides(slideIndex);
-      
-      function plusSlides(n) {
-        showSlides(slideIndex += n);
-      }
-      
-      function currentSlide(n) {
-        showSlides(slideIndex = n);
-      }
-      
-      function showSlides(n) {
-        let i;
-        let slides = document.getElementsByClassName("carousel-slide");
-        let dots = document.getElementsByClassName("carousel-dot");
-        if (n > slides.length) {slideIndex = 1}    
-        if (n < 1) {slideIndex = slides.length}
-        for (i = 0; i < slides.length; i++) {
-          slides[i].style.display = "none";  
-        }
-        for (i = 0; i < dots.length; i++) {
-          dots[i].className = dots[i].className.replace(" carousel-active", "");
-        }
-        slides[slideIndex-1].style.display = "block";  
-        dots[slideIndex-1].className += " carousel-active";
-      }
-      </script>
-    </div>
-  </div>
-</div>
+        const accordionTitles = document.querySelectorAll(".accordionTitle");
+accordionTitles.forEach((accordionTitle) => {
+accordionTitle.addEventListener("click", () => {
+ if (accordionTitle.classList.contains("is-open")) {
+   accordionTitle.classList.remove("is-open");
+ } else {
+   const accordionTitlesWithIsOpen = document.querySelectorAll(".is-open");
+   accordionTitlesWithIsOpen.forEach((accordionTitleWithIsOpen) => {
+     accordionTitleWithIsOpen.classList.remove("is-open");
+   });
+   accordionTitle.classList.add("is-open");
+ }
+});
+});
+       </script>
+    </div>  
 
-<!--Table inserted, ADD SORT FUNCTION-->
-<!--page 04 sortable table-->
-<div class="column-container-1" id="04">
-  <div class="right" style="background-color: #4d9dbd;" >
-      Page 5 right  Column
-  </div>
-
-  <div class="left" style="background-color: #0f721c"> 
-    <table style="margin-top: 15%;">
-      <tr>
-          <th>title</th>
-          <th>type</th>
-          <th>date</th>
-          <th>rating</th>
-      </tr>
-      <tr>
-          <td style="font-weight: bold; background-color:black">
-                  <a href="https://www.theguardian.com/books/2024/jan/06/glorious-exploits-by-ferdia-lennon-review-classical-tragedy-as-a-celtic-caper" style="color: aliceblue" target="_blank">  
-                      Glorious Exploits(2024) Ferdida Lennon
-                  </a>  
-          </td>
-          <td>book</td>
-          <td>17 jan. 2025</td>
-          <td>3.5/5</td>
-      </tr>
-      <tr>
-          <td style="font-weight: bold; background-color:black">
-              <a href=https://www.nytimes.com/2024/01/19/books/review/martyr-kaveh-akbar.html style="color: aliceblue" target="_blank">
-                  Martyr!(2024) Kaveh Akbar 
-              </a>
-          </td>
-          <td>book</td>
-          <td>19 feb. 2025</td>
-          <td>4.6/5</td>
-      </tr>
-      <tr>
-          <td style="font-weight: bold; background-color: black">
-              <a href = "https://en.wikipedia.org/wiki/Spider-Man:_Into_the_Spider-Verse" style= "color: aliceblue" target="_blank">
-                  Spiderman: Into the Spider-Verse(2018) 
-              </a>
-          </td>
-          <td>movie</td>
-          <td>17 feb. 2025</td>
-          <td>4/5</td>
-      </tr>
-      <tr>
-          <td style="font-weight: bold; background-color:black">
-              <a href="https://en.wikipedia.org/wiki/Spider-Man:_Into_the_Spider-Verse" style="color: aliceblue" target="_blank">
-                  Spiderman: Across the Spider-Verse(2023) 
-              </a>
-          </td>
-          <td>movie</td>
-          <td>17 feb. 2025</td>
-          <td>4.3/5</td>
-      </tr>
-      <tr>
-          <td style="font-weight: bold; background-color:black">
-              <a href="https://www.jonathanlack.com/p/review-the-brutalist-is-a-monument" style = "color: aliceblue;" target="_blank">
-                  The Brutalist(2024) 
-              </a>
-          </td>
-          <td>movie</td>
-          <td>10 feb. 2025</td>
-          <td>4/5</td>
-      </tr>
-  </table>
-  </div>
-</div>
-
-<!--NOT STARTED-->
-<!--page 05 accordion text and youtube videos-->
-<div class="column-container-1" id="05">
-  <div class="right" style="background-color: #bd4d67" >
-      page 6 right Column
-  </div>
-
-  <div class="left" style="background-color: #ce2a14"> page 6 left column </div>
-</div>  
-
-</body>
-
-    
-   
-  
   </body>
+
 </html>

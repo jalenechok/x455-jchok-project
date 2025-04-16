@@ -8,13 +8,17 @@ body, html {
 
 /*title page background image*/
 .bg {
-  background-image: url("../photos/title_img.jpg");
+
   display: block;
   height: 100%; 
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
   width: 100%;
+}
+
+.th {
+  cursor: pointer;
 }
 
 /*cursor*/
@@ -25,7 +29,7 @@ body, html {
 /*navigation bar*/
 .navbar {
   display: block;
-  padding: 4px 8px;
+  padding: 4px 6px;
   text-decoration: none;
   text-align: center;
   position:fixed;
@@ -166,6 +170,24 @@ body, html {
   
 }
 
+.accordion-row {
+  display: flex;
+  flex-wrap:nowrap;
+  padding: 5%;
+  max-height: 100%;
+  width: 100%;
+  float: left;
+}
+
+/* Create equal columns that sits next to each other */
+.accordion-column {
+  flex: 50%;
+  max-width: 50%;
+  padding: 0 4px;
+  object-fit: contain;
+  
+}
+
 .lightbox-column img {
   margin-top: 8px;
   vertical-align: middle;
@@ -195,6 +217,7 @@ body, html {
   right: 25px;
   font-size: 35px;
   font-weight: bold;
+  z-index: 1;
 }
 
 .lightbox-close:hover,
@@ -208,24 +231,22 @@ body, html {
 .lightbox-modal {
   display: none;
   position: fixed;
-  z-index: 1;
-  padding-top: 100px;
   left: 0;
   top: 0;
   width: 100%;
   height: 100%;
-  overflow: auto;
+  overflow:hidden;
   background-color: black;
+  z-index: 2;
 }
 
 /* Modal Content */
 .lightbox-modal-content {
   position: relative;
-  background-color: #fefefe;
   margin: auto;
-  padding: 0;
-  width: 90%;
-  max-width: 1200px;
+  padding: 0%;
+  height:max-content;
+  contain: content;
 }
 
 
@@ -337,16 +358,35 @@ th, td {
 th {font-style: italic;}
 
 
+/*PAGE 06 ACCORDION AND YOUTUBE*/
+
+.accordionTitle {
+  cursor: pointer;
+  -moz-user-select: none;
+  -webkit-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+.accordionTitle + .accordionContent {
+  display: none;
+}
+
+.accordionTitle.is-open + .accordionContent {
+  display: block;
+}
 
 
 
 /*navbar mobile*/   
-@media screen and (max-width:600px){
+@media screen and (max-width:850px){
   /*navbar*/
   .navbar{
     position: fixed; 
     top: 0%;
-    left:0%
+    left:0%;
+    width: 8%;
+    
   } 
 
   /*fit to screen height*/
@@ -379,7 +419,11 @@ th {font-style: italic;}
     column-count: 1;
     margin-left: 11%;
 
-   }  
+   }
+   
+  table{
+    font-size: 12px
+  }
 }
 
   
