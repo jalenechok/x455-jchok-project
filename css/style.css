@@ -3,8 +3,34 @@ body, html {
   height: 100%;
   width: 100%;
   margin: 0;
-  background-color: aliceblue;
+  background-color: #cfe8fcda;
 }
+
+/*font*/
+.cousine-regular {
+  font-family: "Cousine", monospace;
+  font-weight: 400;
+  font-style: normal;
+}
+
+.cousine-bold {
+  font-family: "Cousine", monospace;
+  font-weight: 700;
+  font-style: normal;
+}
+
+.cousine-regular-italic {
+  font-family: "Cousine", monospace;
+  font-weight: 400;
+  font-style: italic;
+}
+
+.cousine-bold-italic {
+  font-family: "Cousine", monospace;
+  font-weight: 700;
+  font-style: italic;
+}
+
 
 /*title page background image*/
 .bg {
@@ -26,10 +52,20 @@ body, html {
   cursor: pointer;
 }
 
+.logo{
+  display: flex; 
+  position: relative;
+  object-fit: contain;
+  text-align: center;
+  flex-direction: column;
+  width: 50%;
+  left:25%;
+}
+
 /*navigation bar*/
 .navbar {
-  display: block;
-  padding: 4px 6px;
+  display: flex;
+  padding: 2px 3px;
   text-decoration: none;
   text-align: center;
   position:fixed;
@@ -38,16 +74,17 @@ body, html {
   background-color: rgb(26, 12, 0);
   color: aliceblue;  
   overflow: hidden;
+  flex-direction: column;
+  width: 3%;
 }
 
   /* Style the links inside the navigation bar */
   .navbar a {
-    float: left;
     color: aliceblue;
     text-align: center;
-    padding: 8px 12px;
+    padding: 0px 0px;
     text-decoration: none;
-    font-size: 16px;
+    font-size: 12px;
     
   }
   
@@ -55,6 +92,7 @@ body, html {
   .navbar a:hover {
     background-color: aliceblue;
     color: rgb(0, 0, 0);
+    width: 100%;
   }
   
   /* Add a color to the active/current link */
@@ -170,23 +208,6 @@ body, html {
   
 }
 
-.accordion-row {
-  display: flex;
-  flex-wrap:nowrap;
-  padding: 5%;
-  max-height: 100%;
-  width: 100%;
-  float: left;
-}
-
-/* Create equal columns that sits next to each other */
-.accordion-column {
-  flex: 50%;
-  max-width: 50%;
-  padding: 0 4px;
-  object-fit: contain;
-  
-}
 
 .lightbox-column img {
   margin-top: 8px;
@@ -242,11 +263,11 @@ body, html {
 
 /* Modal Content */
 .lightbox-modal-content {
-  position: relative;
+  position: fixed;
   margin: auto;
-  padding: 0%;
-  height:max-content;
-  contain: content;
+  padding: 3%;
+  height:100%;
+  object-fit: contain;
 }
 
 
@@ -359,6 +380,23 @@ th {font-style: italic;}
 
 
 /*PAGE 06 ACCORDION AND YOUTUBE*/
+.accordion-row {
+  display: flex;
+  flex-wrap:nowrap;
+  padding: 5%;
+  max-height: 100%;
+  width: 100%;
+  float: left;
+}
+
+/* Create equal columns that sits next to each other */
+.accordion-column {
+  flex: 50%;
+  max-width: 50%;
+  padding: 0 4px;
+  object-fit: contain;
+  
+}
 
 .accordionTitle {
   cursor: pointer;
